@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Crisp-Journey</title>
+</head>
+
+<body>
+    <header>
+        <h1>Crisp-Journey</h1>
+        <p>Stock Prediction</p>
+    </header>
+    <main>
+        <form action="/predict" method="post">
+            <label for="stock">Select a stock:</label>
+            <select id="stock" name="stock">
+                <option value="AAPL">Apple (AAPL)</option>
+                <option value="MSFT">Microsoft (MSFT)</option>
+                <option value="GOOGL">Google (GOOGL)</option>
+                <option value="AMZN">Amazon (AMZN)</option>
+                <option value="META">Meta (META)</option>
+            </select>
+            <button type="submit">Submit</button>
+        </form>
+        {% if suggestion %}
+        <h2>Crisp-Journey suggests you to {{ suggestion }} {{ stock }}</h2>
+        {% endif %}
+    </main>
+    <footer>
+    <p>Created by:</p>
+    <div class="creators">
+        <div>
+            <p>Janhavi Doshi</p>
+            <a href="mailto:janhavi4696@gmail.com">janhavi4696@gmail.com</a><br>
+            <a href="http://www.janhavidoshi.com">www.janhavidoshi.com</a>
+        </div>
+        <div>
+            <p>Pranali Divekar</p>
+            <a href="mailto:pd1267@g.rit.edu">pd1267@g.rit.edu</a><br>
+            <a href="http://www.pranalidivekar.com">www.pranalidivekar.com</a>
+        </div>
+        <div>
+            <p>Shrutanvi Datar</p>
+            <a href="mailto:sdatar@scu.edu">sdatar@scu.edu</a>
+        </div>
+        <div>
+            <p>Sameer Raghuram</p>
+            <p>Parag Nakhwa</p>
+        </div>
+    </div>
+</footer>
+
+</body>
+
+</html>
+
